@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="id_ScopeSingleton" class="sprinttest.ScopeDemoClass"
+		name="Singleton_name" lazy-init="false" scope="singleton">
+		<property name="str" value="Singleton_MyOrginalStr"></property>
+	</bean>
+	<bean id="id_ScopePrototype" class="sprinttest.ScopeDemoClass"
+		scope="prototype" name="Protoyype_name">
+		<property name="str" value="Prototype_MyPrototypeStr"></property>
+	</bean>
+</beans>

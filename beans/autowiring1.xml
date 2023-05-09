@@ -1,0 +1,35 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<beans xmlns="http://www.springframework.org/schema/beans"
+	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+	xsi:schemaLocation="http://www.springframework.org/schema/beans http://www.springframework.org/schema/beans/spring-beans.xsd">
+
+
+	<bean id="cto" name="cto" class="sprinttest.User"
+		autowire="byType">
+		<property name="userName" value="cto"></property>
+        <property name="userSalary" ref="salaryCTO"></property>
+	</bean>
+
+
+	<bean id="salaryCTO" name="salaryCTO" class="sprinttest.Salary">
+		<property name="netSalary" value="15000"></property>
+		<property name="taxDeduction" value="5.0"></property>
+		
+	</bean>
+	<bean id="ceo" name="ceo" class="sprinttest.User"
+		autowire="byType">
+		<property name="userName" value="ceo"></property>
+		<property name="userSalary" ref="salaryCEO"></property>
+	</bean>
+	<bean id="salaryCEO" name="salaryCEO" class="sprinttest.Salary">
+		<property name="netSalary" value="20000"></property>
+		<property name="taxDeduction" value="4.0"></property>
+	</bean>
+	<bean id="company" name="company" class="sprinttest.Company">
+		<property name="companyID" value="TSL"></property>
+		<property name="companyName" value="Tesla Motors"></property>
+	</bean>
+	<bean id="hqObj" class="sprinttest.CompanyHQ">
+		<property name="hqName" value="Tesla HeadQuaters"></property>
+	</bean>
+</beans>
